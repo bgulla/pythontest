@@ -75,4 +75,6 @@ This is a manifest of wildcarded file-types that are to be ignored by the Git SC
 ```
 templates & static
 ```
-The `templates` and `static` folders are where Flask-specific files live. If you need to learn more about Flask, see [](Here)
+The `templates` and `static` folders are where Flask-specific files live. If you need to learn more about Flask, see [https://github.com/realpython/flask-boilerplate](Here)
+
+

@@ -1,0 +1,4 @@
+*.pyc
+*.pem # Certs/Keys should never be stored in Git. 
+*.crt
+*.key

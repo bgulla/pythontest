@@ -1,0 +1,101 @@
+{% extends "base2.html" %}
+
+{% block content %}
+
+
+<!-- <h1>&gt; DoDIIS WW 2018 - ADX Platform Demo </h1> -->
+
+<br>
+
+<!-- {{ banner|safe }} -->
+<pre>
+<center><img style="align:center; width:50%; height:50%;" src="/static/adx_dodiis.png"></center>
+
+</pre>
+<!-- <p style="margin-top:0px; font-size:8px;">ADX Platform: Python + Elasticsearch + DevOps = Awesome</p> -->
+<div class="row">
+
+    <div class="col-sm-6">
+        <div class="card">
+            <h5 class="card-header" style="font-size:12px;"><img src="static/icon-application-containers.png"
+                                                                 style="width:5%; height:5%; margin-right:5px;" \>ADX
+                Python S2i Docker Image</h5>
+            <div class="card-body">
+                <!-- <h5 class="card-title">Special title treatment</h5> -->
+                <p class="card-text" style="font-size:12px;">Builder image that provides a Python 2 application stack.
+                    The ADX Python 2 Docker Image provides a Python installation, a default set of common Python
+                    libraries, and an s2i script enabling deployment of a compatible tenant application.</p>
+                <a href="https://gitlab.dicelab.net/adx/s2i-adx-python2" class="btn btn-primary"
+                   style="font-size:12px;">View Source on CODE</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <h5 class="card-header" style="font-size:12px;"><img src="static/icon-data-storage.png"
+                                                                 style="width:3%; height:3%; margin-right:5px;" \>ADX
+                ElasticSearch (X-Pack) Docker Image</h5>
+            <div class="card-body">
+                <!--<h5 class="card-title">Special title treatment</h5>-->
+                <p class="card-text" style="font-size:12px;"> ADX ElasticSearch Template provides tenant developers
+                    access to various configuration options necessary to define schemas, and build databases upon a
+                    ElasticSearch instance, provisioning application persistent volumes; setting application run-time
+                    resource (CPU and memory) quotas, etc.</p>
+                <a href="https://gitlab.dicelab.net/adx/adx-elasticsearch" style="font-size:12px;"
+                   class="btn btn-primary">View Source on CODE</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<hr \>
+<h4 style="margin-bottom:40px;">Twitter -> Python -> Elasticsearch Example App</h4>
+
+
+<div id="bannerwrapper" style="{{ display_alert }}">{{ banner|safe }}</div>
+
+<!-- Form Code -->
+<form method="post" target="_self">
+    <p style="" align="center"><input type="text" id="text" name="text" style="width:50%; margin-left:2%;"
+                                      value="{{ hashtag }}" autofocus/>
+        <input style="margin-left:2%" type="submit" class="btn btn-primary" value="Retrieve Tweets" {{ button_status }} />
+    </p>
+
+</form>
+
+<!-- Begin Twitter Output -->
+<table class="table table-striped table-bordered table-dark" style="margin-top:40px; {{ display_table }}">
+    <thead>
+    <tr>
+        <th>Timestamp</th>
+        <th>User</th>
+        <th>Message</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for tweet in returned_tweets %}
+    <TR style="font-size:12px;">
+        <TD class="c1">{{ tweet.created_at }}</TD>
+        <TD class="c1">hidden</TD>
+        <TD class="c1">{{ tweet.text }}</TD>
+    </TR>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h4 style="margin-top:40px;">ElasticSearch Ingest</h4>
+
+<div>
+    <table class="table table-striped table-bordered table-dark" style="margin-top:40px; {{ display_table }}">
+        <thead>
+    <tr>
+        <th>{{ elastic_results|safe }}</th>
+    </tr>
+        </thead>
+    </table>
+</div>
+
+{% endblock %}
