@@ -1,12 +1,12 @@
 # Python2 Flask Example Application (S2i Exclusive Build Process)
 
-## Intro
+# Intro
 TODO
 
-## License
+# License
 TODO
 
-## Required Files
+# Required Files
 ### Project Structure
 -------
 ```sh
@@ -39,7 +39,7 @@ TODO
 └── wsgi.py
 ```
 
-### Files
+# Files
 ```
 Dockerfile
 ```
