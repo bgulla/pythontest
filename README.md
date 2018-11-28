@@ -6,8 +6,7 @@ TODO
 # License
 TODO
 
-# Required Files
-### Project Structure
+# Project Structure
 -------
 ```sh
 .
@@ -39,7 +38,7 @@ TODO
 └── wsgi.py
 ```
 
-# Files
+# Required Files
 ```
 Dockerfile
 ```
