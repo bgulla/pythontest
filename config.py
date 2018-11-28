@@ -1,3 +1,3 @@
 port = 8443 
-certfile = '/secret/cert/python-tls.crt'
-keyfile = '/secret/cert/python-tls.key'
+certfile = '/secret/cert/server.crt'
+keyfile = '/secret/cert/server.key'
