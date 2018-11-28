@@ -1,4 +1,4 @@
-# Python2 Flask Example Application
+# Python2 Flask Example Application (S2i Exclusive Build Process)
 
 ## Intro
 TODO
@@ -7,6 +7,39 @@ TODO
 TODO
 
 ## Required Files
+### Project Structure
+-------
+```sh
+.
+├── Dockerfile
+├── README.md
+├── config.py
+├── exampleapp.py
+├── requirements.txt
+├── static
+│   ├── adx_dodiis.png
+│   ├── adx_logo_invert_xs.png
+│   ├── adx_logo_nofill.png
+│   ├── adx_logo_xs.png
+│   ├── bootstrap.min.css
+│   ├── dodiis_demo.jpg
+│   ├── icon-application-containers.png
+│   ├── icon-common-control-provider.png
+│   ├── icon-data-storage.png
+│   ├── tweets.txt
+│   └── tweets_clean.txt
+├── templates
+│   ├── 404.html
+│   ├── base.html
+│   ├── base2.html
+│   ├── demo.html
+│   ├── dodiis.html
+│   ├── dodiis2.html
+│   └── index.html
+└── wsgi.py
+```
+
+### Files
 ```
 Dockerfile
 ```
@@ -34,3 +67,13 @@ config.py
 ```
 The `config.py` file acts as an external configuration file for the `gunicorn` webserver. NOTE: You will need to set an environment variable (APP_CONFIG) in your s2i artifact injector pod (<app_name>-s2i-runtime-artifact-injector) 
 to the full filepath of the file. (example: /opt/app-root/config.py, /opt/app-root is the default location that s2i will inject your source code into the compiled Docker image.)
+
+```
+.gitignore
+```
+This is a manifest of wildcarded file-types that are to be ignored by the Git SCM.
+
+```
+templates & static
+```
+The `templates` and `static` folders are where Flask-specific files live. If you need to learn more about Flask, see [](Here)
